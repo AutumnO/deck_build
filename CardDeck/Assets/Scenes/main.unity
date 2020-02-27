@@ -478,7 +478,7 @@ GameObject:
   - component: {fileID: 1265094319}
   - component: {fileID: 1265094318}
   m_Layer: 5
-  m_Name: RemoveFromBottomButton
+  m_Name: DrawFromBottomButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1004,7 +1004,7 @@ GameObject:
   - component: {fileID: 1965368907}
   - component: {fileID: 1965368906}
   m_Layer: 5
-  m_Name: RemoveFromTopButton
+  m_Name: DrawFromTopButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

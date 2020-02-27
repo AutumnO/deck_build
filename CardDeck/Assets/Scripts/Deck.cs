@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Deck
@@ -19,7 +21,7 @@ public class Deck
         Cards.AddLast(card);
     }
 
-    public Card RemoveFromTop()
+    public Card DrawFromTop()
     {
         Card topCard = Cards.Last();
         Cards.RemoveLast();
@@ -32,7 +34,7 @@ public class Deck
         Cards.AddFirst(card);
     }
 
-    public Card RemoveFromBottom()
+    public Card DrawFromBottom()
     {
         Card bottomCard = Cards.First();
         Cards.RemoveFirst();
@@ -40,7 +42,6 @@ public class Deck
     }
 
     #endregion
-
 
 
     protected LinkedList<Card> Cards { get; set; }
@@ -54,8 +55,48 @@ public class Deck
 
     public void Shuffle()
     {
-         // private Vector2 card_vect = Cards.ToArray<Card>;
-         // need to add Adam's new code to all 
+        // need to add Adam's new code to all 
+
+        Card[] deck_vect = new Card[Cards.Count];
+        int index = 0;
+        int random = Random.Range(0, Cards.Count);
+
+        foreach(Card card_i in Cards)
+        {
+            deck_vect[index] = card_i;
+            index++;
+        }
+
+
+        for(var i = 0; i < deck_vect.Length; i++)
+        {
+            random = Random.Range(0, deck_vect.Length);
+
+            Card temp = deck_vect[i];
+            deck_vect[i] = deck_vect[random];
+            deck_vect[random] = temp;
+        }
+        
+        Cards = new LinkedList<Card>();
+
+        for(var i = 0; i < deck_vect.Length; i++)
+        {
+            //convert deck into Linked List
+            Cards.AddLast(deck_vect[i]);
+        }
+    }
+
+    public void Merge(Deck new_deck)
+    {
+        LinkedListNode<Card> current = new_deck.Cards.First;
+
+        foreach(Card card_i in new_deck.Cards)
+        {
+            Cards.AddLast(current.Value);
+            current = current.Next;
+        }
+
+        // ???      do I want to shuffle after merge?        ???
     }
 
 }

@@ -8,9 +8,15 @@ using System.Threading.Tasks;
 public class Card
 {
     public string Name { get; set; }
+    public bool IsFaceUp { get; set; }
 
     public Card()
     {
         Name = "";
+    }
+
+    public void Flip()
+    {
+        IsFaceUp = !IsFaceUp;
     }
 }
