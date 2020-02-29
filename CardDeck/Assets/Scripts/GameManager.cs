@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
             var controller = card.GetComponent<CardController>();
 
             //attach card C# object to card Unity object
-            controller.Card = _deck.RemoveFromTop();
+            controller.Card = _deck.DrawFromTop();
 
             if (controller != null)
             {

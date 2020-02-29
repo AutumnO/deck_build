@@ -19,6 +19,7 @@ public class Deck
     public void AddToTop(Card card)
     {
         Cards.AddLast(card);
+        Debug.Log("Added to Top");
     }
 
     public Card DrawFromTop()
