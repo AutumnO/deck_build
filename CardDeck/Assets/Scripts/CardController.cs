@@ -16,8 +16,8 @@ public class CardController : MonoBehaviour
         UpdateFaceMaterial();
         if (BackMaterial != null)
         {
-            MeshRenderer mesh = gameObject.FindComponentInChildWithTag<MeshRenderer>(CARD_BACK_TAG);
-            mesh.material = BackMaterial;
+            // MeshRenderer mesh = gameObject.FindComponentInChildWithTag<MeshRenderer>(CARD_BACK_TAG);
+            // mesh.material = BackMaterial;
         }
     }
 
@@ -25,8 +25,8 @@ public class CardController : MonoBehaviour
     {
         if (FaceMaterial != null)
         {
-            MeshRenderer mesh = gameObject.FindComponentInChildWithTag<MeshRenderer>(CARD_FACE_TAG);
-            mesh.material = FaceMaterial;
+            // MeshRenderer mesh = gameObject.FindComponentInChildWithTag<MeshRenderer>(CARD_FACE_TAG);
+            // mesh.material = FaceMaterial;
         }
     }
 

@@ -19,11 +19,12 @@ public class Deck
     public void AddToTop(Card card)
     {
         Cards.AddLast(card);
-        Debug.Log("Added to Top");
+        Debug.Log("Add to Top Completed");
     }
 
     public Card DrawFromTop()
     {
+        Debug.Log("Draw From Top Completed");
         Card topCard = Cards.Last();
         Cards.RemoveLast();
         return topCard;
@@ -33,10 +34,12 @@ public class Deck
     public void AddToBottom(Card card)
     {
         Cards.AddFirst(card);
+        Debug.Log("Add to Bottom Completed");
     }
 
     public Card DrawFromBottom()
     {
+        Debug.Log("Draw From Bottom Completed");
         Card bottomCard = Cards.First();
         Cards.RemoveFirst();
         return bottomCard;
@@ -50,13 +53,17 @@ public class Deck
     public Deck()
     {
         Cards = new LinkedList<Card>();
+        for (var i = 0; i < 52; i++)
+        {
+            Card new_card = new Card();
+            Cards.AddLast(new_card);
+        }
     }
 
 
 
     public void Shuffle()
     {
-        // need to add Adam's new code to all 
 
         Card[] deck_vect = new Card[Cards.Count];
         int index = 0;
